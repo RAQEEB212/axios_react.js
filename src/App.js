@@ -6,8 +6,11 @@ import axios from "axios";
 function App() {
   const [data,setData] = useState([])
   useEffect(() => {
-    axios.get('https://reqres.in/api/users?page=2')
-        .then(res => setData(res.data.data))
+    axios.delete('https://reqres.in/api/users/2',{
+      "name": "RAQEEB",
+      "job": "Frontend Developer"
+    })
+        .then(res => console.log(res))
         .then(err => console.log(err));
   }, []);
   return (
